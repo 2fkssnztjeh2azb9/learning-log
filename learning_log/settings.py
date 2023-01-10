@@ -149,7 +149,7 @@ if config.is_valid_platform():
         db_settings = config.credentials('database')
         DATABASES = {
             'default': {
-                'ENGINE': djsngo.db.backends.postgresql,
+                'ENGINE': django.db.backends.postgresql,
                 'NAME': db_settings['path'],
                 'USER': db_settings['username'],
                 'PASSWORD': db_settings['password'],
