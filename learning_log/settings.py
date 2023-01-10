@@ -148,7 +148,7 @@ if config.is_valid_platform():
     if not config.in_build():
         db_settings = config.credentials('database')
         DATABASES = {
-            'default' = {
+            'default': {
                 'ENGINE': djsngo.db.backends.postgresql,
                 'NAME': db_settings['path'],
                 'USER': db_settings['username'],
