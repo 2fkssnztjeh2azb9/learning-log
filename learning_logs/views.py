@@ -20,10 +20,11 @@ def topics(request):
     return render(request, 'learning_logs/topics.html', context)
 
 def check_user(request, topic):
+    if topic.public:
+        return True
     if topic.owner != request.user:
         raise Http404
 
-@login_required
 def topic(request, topic_id):
     """Show a single topic and all its entries"""
     topic = Topic.objects.get(id=topic_id)
@@ -101,3 +102,9 @@ def handler404(request, exception):
 
 def handler500(request):
     return render(request, 'errors/500.html', status=500)
+
+def public_topics(request):
+    topics = topics = Topic.objects.filter(public=True).order_by('date_added')
+
+    context = {'topics': topics}
+    return render(request, 'learning_logs/public_topics.html', context)
