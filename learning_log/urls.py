@@ -16,6 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from learning_logs import views
+
+handler404 = views.handler404
+handler500 = views.handler500
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('users/', include('users.urls')),
