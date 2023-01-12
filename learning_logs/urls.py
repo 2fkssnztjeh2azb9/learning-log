@@ -4,6 +4,9 @@ from django.urls import path
 
 from . import views
 
+handler404 = views.handler404
+handler500 = views.handler500
+
 app_name = "learning_logs"
 urlpatterns = [
     # Home page
