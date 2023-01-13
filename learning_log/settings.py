@@ -134,7 +134,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # My settings
 LOGIN_URL = 'users:login'
 
-# Platform.sh settings
 # Platform.sh settings.
 from platformshconfig import Config
 config = Config()
